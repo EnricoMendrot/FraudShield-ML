@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+venv/
+
+# Data
+data/processed/
+data/raw/creditcard.csv  # se dataset grande ou sensível
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
