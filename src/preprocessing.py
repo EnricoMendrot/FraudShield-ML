@@ -51,7 +51,4 @@ def run_preprocessing_pipeline(file_path: str, target_col: str = 'Class') -> pd.
     return df
 
 if __name__ == "__main__":
-    # Exemplo de como rodá-lo localmente
-    # df_processed = run_preprocessing_pipeline('../data/raw/creditcard.csv', target_col='Class')
-    # df_processed.to_csv('../data/processed/creditcard_processed.csv', index=False)
     pass

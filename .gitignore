@@ -17,3 +17,7 @@ data/raw/creditcard.csv  # se dataset grande ou sensível
 .DS_Store
 Thumbs.db
 data/raw/creditcard.csv
+
+*.pkl
+*.joblib
+models/
