@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import RobustScaler
 from imblearn.over_sampling import SMOTE
 import logging
 
@@ -15,15 +15,15 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
 
 def scale_features(df: pd.DataFrame, target_col: str = 'Class') -> pd.DataFrame:
     """
-    Padroniza as colunas numéricas usando o StandardScaler, ignorando a coluna alvo.
+    Padroniza as colunas numéricas usando o RobustScaler, ignorando a coluna alvo.
     """
-    scaler = StandardScaler()
+    scaler = RobustScaler()
     features = [col for col in df.columns if col != target_col]
     
     df_scaled = df.copy()
     df_scaled[features] = scaler.fit_transform(df_scaled[features])
     
-    logging.info("Features numéricas foram escalonadas (StandardScaler).")
+    logging.info("Features numéricas foram escalonadas (RobustScaler).")
     return df_scaled
 
 def apply_smote(X: pd.DataFrame, y: pd.Series, random_state: int = 42):

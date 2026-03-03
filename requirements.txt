@@ -9,3 +9,4 @@ uvicorn
 pydantic
 evidently
 imbalanced-learn
+xgboost
