@@ -8,7 +8,8 @@ venv/
 
 # Data
 data/processed/
-data/raw/creditcard.csv  # se dataset grande ou sensível
+data/raw/*.csv
+data/raw/*.zip
 
 # Logs
 *.log
@@ -16,8 +17,23 @@ data/raw/creditcard.csv  # se dataset grande ou sensível
 # OS files
 .DS_Store
 Thumbs.db
-data/raw/creditcard.csv
 
+# Databases
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+
+# IDEs
+.vscode/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Models
+models/
 *.pkl
 *.joblib
-models/

@@ -34,6 +34,8 @@ def train():
     
     print(classification_report(y_test, y_pred_custom))
 
+    os.makedirs("models", exist_ok=True)
+    
     joblib.dump(fr, "models/random_forest.pkl")
 
     print("Modelo salvo com sucesso em models/random_forest.pkl")

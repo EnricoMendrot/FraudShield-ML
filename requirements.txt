@@ -10,3 +10,11 @@ pydantic
 evidently
 imbalanced-learn
 xgboost
+fastapi 
+uvicorn
+sqlalchemy
+passlib[bcrypt]
+python-jose[cryptography] 
+python-dotenv 
+python-multipart
+alembic
