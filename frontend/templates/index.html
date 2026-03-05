@@ -19,30 +19,29 @@
         <div class="dashboard">
             <header>
                 <h1>FRAUD SHIELD</h1>
-                <p class="subtitle">Detecção Inteligente de Fraudes em Tempo Real</p>
+                <p class="subtitle">Intelligent Real-Time Fraud Detection</p>
             </header>
 
             <div class="actions">
                 <button class="btn-generate" onclick="generateRandom()">
-                    Simular Transação
+                    Simulate Transaction
                 </button>
                 <button class="btn-predict" onclick="predict()">
-                    Verificar Fraude
+                    Check for Fraud
                 </button>
             </div>
 
             <div class="grid" id="inputGrid">
-                <!-- Inputs will be generated here -->
             </div>
 
             <div class="loading" id="loading">
                 <div class="spinner"></div>
-                <p style="margin-top: 10px;">Analisando padrões...</p>
+                <p style="margin-top: 10px;">Analyzing patterns...</p>
             </div>
 
             <div class="result-panel" id="resultPanel">
                 <div class="result-title" id="resultTitle">LEGAL</div>
-                <p id="resultText">Esta transação parece ser legítima.</p>
+                <p id="resultText">This transaction appears to be legitimate.</p>
                 <p id="resultProb" style="margin-top: 5px; opacity: 0.8; font-size: 0.8rem;"></p>
             </div>
         </div>
