@@ -2,7 +2,8 @@ from fastapi import APIRouter, HTTPException
 from .schemas import TransactionSchema
 import joblib
 import os
-import numpy as np
+import numpy as np  
+from monitoring.logger import log_prediction
 
 predict_router = APIRouter(prefix="/predict", tags=["predict"])
 
@@ -43,6 +44,12 @@ async def new_prediction(data: TransactionSchema):
         threshold = 0.6
         prediction = 1 if probability >= threshold else 0
         
+        log_prediction(
+            amount=data.Amount,
+            is_fraud=bool(prediction),
+            probability=float(probability)
+        )
+
         return {
             "fraud_prediction": int(prediction),
             "fraud_probability": round(float(probability), 4),

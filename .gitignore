@@ -13,6 +13,7 @@ data/raw/*.zip
 
 # Logs
 *.log
+monitoring/logs/
 
 # OS files
 .DS_Store
