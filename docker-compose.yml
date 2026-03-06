@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    container_name: fraudshield-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./monitoring/logs:/app/monitoring/logs
+      - ./fraud_shield.db:/app/fraud_shield.db
+    env_file:
+      - api/.env
+    restart: unless-stopped

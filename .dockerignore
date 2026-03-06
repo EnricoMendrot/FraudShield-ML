@@ -1,0 +1,32 @@
+# Ambiente virtual
+venv/
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Git
+.git/
+.gitignore
+
+# Dados e modelos grandes
+data/raw/
+notebooks/
+
+# Logs
+monitoring/logs/
+
+# Variáveis de ambiente
+api/.env
+
+# IDE
+.vscode/
+
+# Testes
+tests/
+.pytest_cache/
+.coverage
+htmlcov/

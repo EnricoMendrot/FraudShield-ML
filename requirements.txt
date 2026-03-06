@@ -13,7 +13,7 @@ xgboost
 fastapi 
 uvicorn
 sqlalchemy
-passlib[bcrypt] == 4.0.1
+passlib[bcrypt]==1.7.4
 python-jose[cryptography] 
 python-dotenv 
 python-multipart
