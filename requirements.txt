@@ -18,3 +18,5 @@ python-jose[cryptography]
 python-dotenv 
 python-multipart
 alembic
+pytest
+httpx
