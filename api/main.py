@@ -1,15 +1,14 @@
 # uvicorn api.main:app --reload
 
-from fastapi import FastAPI
-
-from passlib.context import CryptContext
-from dotenv import load_dotenv
 import os
 
-from api.database import engine, Base
-from api.auth_routes import auth_router
-from api.predict import predict_router
+from dotenv import load_dotenv
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+from api.auth_routes import auth_router
+from api.database import Base, engine
+from api.predict import predict_router
 
 # Create database tables
 
@@ -21,7 +20,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="FraudShield ML API",
     description="Professional Fraud Detection API for portfolio.",
-    version="1.0.0"
+    version="1.0.0",
 )
 
 app.add_middleware(

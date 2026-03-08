@@ -1,0 +1,32 @@
+[project]
+name = "fraudshield-ml"
+version = "0.1.0"
+description = "Professional Fraud Detection System"
+authors = [{ name = "Enrico Mendrot" }]
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = ["migrations", ".venv"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501", # ignora linha muito longa
+    "B008", # permite Depends() do FastAPI em argumentos padrões
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint.per-file-ignores]
+"migrations/env.py" = ["E402"]

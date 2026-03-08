@@ -20,3 +20,4 @@ python-multipart
 alembic
 pytest
 httpx
+ruff

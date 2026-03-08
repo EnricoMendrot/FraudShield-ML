@@ -1,44 +1,49 @@
+import os
+
+import joblib
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from imblearn.over_sampling import SMOTE
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
-from imblearn.over_sampling import SMOTE
-import joblib
-import os
+from sklearn.model_selection import train_test_split
+
 
 def train():
     df = pd.read_csv("data/processed/creditcard_processed.csv")
 
-    X = df.drop('Class', axis=1)
-    y = df['Class']
+    X = df.drop("Class", axis=1)
+    y = df["Class"]
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
 
     smote = SMOTE(random_state=42)
     X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
 
     fr = RandomForestClassifier(
         n_estimators=150,
-        max_depth=None, 
-        min_samples_split=5, 
-        min_samples_leaf=5, 
+        max_depth=None,
+        min_samples_split=5,
+        min_samples_leaf=5,
         class_weight="balanced",
-        random_state=42
+        random_state=42,
     )
 
     fr.fit(X_train_res, y_train_res)
-    
+
     y_probs = fr.predict_proba(X_test)[:, 1]
     threshold = 0.6
     y_pred_custom = (y_probs >= threshold).astype(int)
-    
+
     print(classification_report(y_test, y_pred_custom))
 
     os.makedirs("models", exist_ok=True)
-    
+
     joblib.dump(fr, "models/random_forest.pkl")
 
     print("Modelo salvo com sucesso em models/random_forest.pkl")
+
 
 if __name__ == "__main__":
     train()

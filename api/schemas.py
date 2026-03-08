@@ -1,15 +1,16 @@
 from pydantic import BaseModel
-from typing import Optional
+
 
 class UserSchema(BaseModel):
     username: str
     email: str
     password: str
-    is_active: Optional[bool] = True
-    is_admin: Optional[bool] = True
+    is_active: bool | None = True
+    is_admin: bool | None = True
 
     class Config:
         from_attributes = True
+
 
 class TransactionSchema(BaseModel):
     Time: float
