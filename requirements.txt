@@ -10,12 +10,10 @@ pydantic
 evidently
 imbalanced-learn
 xgboost
-fastapi 
-uvicorn
 sqlalchemy
 passlib[bcrypt]==1.7.4
-python-jose[cryptography] 
-python-dotenv 
+python-jose[cryptography]
+python-dotenv
 python-multipart
 alembic
 pytest
